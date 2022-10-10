@@ -35,7 +35,7 @@ select * from titles;
 
 -- Create department employee table
 create table dept_emp (
-	emp_no INT NOT NULL,
+	emp_no INT PRIMARY KEY NOT NULL,
 	dept_no VARCHAR(8) NOT NULL,
     foreign key (emp_no) references employees (emp_no),
     foreign key (dept_no) references departments (dept_no)
@@ -45,7 +45,7 @@ select * from dept_emp;
 
 -- Create salaries table
 create table salaries (
-	emp_no INT NOT NULL,
+	emp_no INT PRIMARY KEY NOT NULL,
 	salary INT NOT NULL,
     foreign key (emp_no) references employees (emp_no)
 );
@@ -55,7 +55,7 @@ select * from salaries;
 -- Create Department manager table
 create table dept_manager (
 	dept_no VARCHAR(8) NOT NULL,
-	emp_no INT NOT NULL,
+	emp_no INT PRIMARY KEY NOT NULL,
 	foreign key (dept_no) references departments (dept_no),
     foreign key (emp_no) references employees (emp_no)
     
